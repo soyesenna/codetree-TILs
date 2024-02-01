@@ -19,12 +19,12 @@ public class Main {
             String order = st.nextToken();
 
             if (order.equals("R")) {
-                for (int j = 0; j < x; j++) {
+                for (int j = 0; j <= x; j++) {
                     map[now + j]++;
                 }
                 now += x;
             }else {
-                for (int j = 0; j < x; j++) {
+                for (int j = 0; j <= x; j++) {
                     map[now - j]++;
                 }
                 now -= x;
@@ -35,7 +35,7 @@ public class Main {
         int continuous = 0;
         for (int i = 0; i < map.length; i++) {
             if (map[i] < 2) {
-                result += continuous >= 2 ? continuous : 0;
+                result += continuous >= 2 ? continuous - 1 : 0;
                 continuous = 0;
             }else {
                 continuous++;
